@@ -1,9 +1,25 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Tab Two
-    </ion-title>
-  </ion-toolbar>
+	<ion-toolbar>
+		<ion-title>
+			Photo Gallery
+		</ion-title>
+	</ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+	<ion-fab vertical="bottom" horizontal="center" slot="fixed">
+		<ion-fab-button (click)="takePicture()">
+			<ion-icon name="camera"></ion-icon>
+		</ion-fab-button>
+	</ion-fab>
+
+	<ion-card>
+		<ion-img [src]="currentImage"></ion-img>
+
+		<ion-card-content>
+			<ion-card-title>Photo</ion-card-title>
+			<p>Image taken in this test app.</p>
+		</ion-card-content>
+	</ion-card>
+
+</ion-content>
