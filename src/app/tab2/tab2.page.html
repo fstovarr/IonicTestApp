@@ -8,18 +8,17 @@
 
 <ion-content>
 	<ion-fab vertical="bottom" horizontal="center" slot="fixed">
-		<ion-fab-button (click)="takePicture()">
+		<ion-fab-button (click)="photoService.takePicture()">
 			<ion-icon name="camera"></ion-icon>
 		</ion-fab-button>
 	</ion-fab>
 
-	<ion-card>
-		<ion-img [src]="currentImage"></ion-img>
-
-		<ion-card-content>
-			<ion-card-title>Photo</ion-card-title>
-			<p>Image taken in this test app.</p>
-		</ion-card-content>
-	</ion-card>
+	<ion-grid>
+		<ion-row>
+			<ion-col col-6 *ngFor="let photo of photoService.photos">
+				<img [src]="photo.data">				
+			</ion-col>
+		</ion-row>
+	</ion-grid>
 
 </ion-content>
